@@ -4,6 +4,8 @@ import LandingPage from './pages/LandingPage'
 import AuthPage from './pages/AuthPage'
 import ProfilePage from './pages/ProfilePage'
 import GamePage from './pages/GamePage'
+import BacklogPage from './pages/BacklogPage'
+import ImportPage from './pages/ImportPage'
 
 function App() {
   return (
@@ -15,7 +17,9 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/backlog" element={<BacklogPage />} />
             <Route path="/game/:id" element={<GamePage />} />
+            <Route path="/import" element={<ImportPage />} />
           </Routes>
         </main>
       </div>
