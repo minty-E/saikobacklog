@@ -85,8 +85,13 @@ export default function LandingPage() {
   useEffect(() => {
     Promise.all([getUpcomingGames(), getTrendingGames()])
       .then(([up, tr]) => {
-        setUpcoming(up)
-        setTrending(tr)
+        setUpcoming(Array.isArray(up) ? up : [])
+        setTrending(Array.isArray(tr) ? tr : [])
+      })
+      .catch((err) => {
+        console.error('Failed to load games:', err)
+        setUpcoming([])
+        setTrending([])
       })
       .finally(() => setLoading(false))
   }, [])
